@@ -13,7 +13,9 @@ The DispatcherConsoleCSS static resource allows for more text to be displayed on
 Standard keyboard shortcuts: https://help.salesforce.com/s/articleView?id=sf.pfs_gantt_keyboard_shortcuts.htm&type=5
 The following keyboard shortcuts are added:
 8 - 2 weeks view
+f - toggles gantt chart filter options
 p - opens the Gantt Palettes menu and focuses on the palette selection dropdown
+c - opens the Resource filter menu and focuses on the Crews Filtering selection dropdown
 m - toggle Match Gantt Dates
 l - puts focus on the list filters for the service appointments list
 Shift + S - focus on the search service appointments input field
