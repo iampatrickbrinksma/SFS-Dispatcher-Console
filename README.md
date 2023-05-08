@@ -4,7 +4,9 @@ This repo contains examples of how to add or adjust functionality to the Salesfo
 
 # 1. More Information On Planning Bar
 
-The DispatcherConsoleCSS static resource allows for more text to be displayed on a planning bar in the gantt. The Gantt Label information is displayed on multiple lines instead of just a single line.
+The DispatcherConsoleCSS static resource allows for more text to be displayed on a planning bar in the gantt. The Gantt Label information is displayed on multiple lines instead of just a single line. See screenshot for how this is displayed.
+
+![image](https://user-images.githubusercontent.com/78381570/236772466-f0961c9b-65e4-474b-8359-87939d943142.png)
 
 # 2. Additional Keyboard Shortcuts
 
