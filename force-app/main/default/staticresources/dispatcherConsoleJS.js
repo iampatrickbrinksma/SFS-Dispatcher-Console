@@ -2,7 +2,9 @@
 // Standard keyboard shortcuts: https://help.salesforce.com/s/articleView?id=sf.pfs_gantt_keyboard_shortcuts.htm&type=5
 // The following keyboard shortcuts are added:
 // 8 - 2 weeks view
+// f - toggles gantt chart filter options
 // p - opens the Gantt Palettes menu and focuses on the palette selection dropdown
+// c - opens the Resource filter menu and focuses on the Crews Filtering selection dropdown
 // m - toggle Match Gantt Dates
 // l - puts focus on the list filters for the service appointments list
 // Shift + S - focus on the search service appointments input field
@@ -20,8 +22,11 @@ var elMap = {
     'timelineselect':       '#selectTimelineContainer',
     '2weeksitem':           '#selectTimelineContainer > button:nth-child(6)',
     'filterbtn':            '#filterSkillsButton',
+    'filterbox':            '#SelectSkilsPropertyBox',
     'palettesmenu':         '#gantt-filter-tabs > button:last-child',
     'paletteselect':        '#ColorPaletteContainer > gantt-palette > div > div:nth-child(2) > span > select',
+    'resourcesmenu':        '#gantt-filter-tabs > button:nth-child(2)',
+    'crewsfilter':          '#GanttCrewFilterSelect',
     'matchganttdates':      '#matchGanttCheckbox',
     'filterselect':         '#PredefinedFilterSelector',
     'searchlistinput':      '#TaskSearchFilterInput',
@@ -49,39 +54,49 @@ document.addEventListener('keydown', (event) => {
 
     // We're good to go, let's determine 
     // what keyboard shortcut is used
-    if (event.key == '8') {
+    if (event.key === '8') {
         console.log('Keyboard shortcut: Show 2 weeks on Gantt');
-        const el = document.querySelector(elMap['timelineselect']);
-        if (el) el.style.display = 'block';
-        actionOnElement(document, false, true, elMap['2weeksitem']);
+        actionOnElement(document, ['show'], elMap['timelineselect']);
+        actionOnElement(document, ['click'], elMap['2weeksitem']);
         if (el) el.click();
-    } else if (event.key == 'p') {
+    } else if (event.key === 'f') {
+        console.log('Keyboard shortcut: Show/Hide Gantt Chart Filter options');
+        actionOnElement(document, ['click'], elMap['filterbtn']);
+    } else if (event.key === 'p') {
         console.log('Keyboard shortcut: Show Gantt Palette selection');
-        actionOnElement(document, false, true, elMap['filterbtn']);
-        actionOnElement(document, false, true, elMap['palettesmenu']);
-        actionOnElement(document, true, false, elMap['paletteselect']);
-    } else if (event.key == 'm') {
+        actionOnElement(document, ['show'], elMap['filterbox']);
+        actionOnElement(document, ['click'], elMap['palettesmenu']);
+        actionOnElement(document, ['focus'], elMap['paletteselect']);
+    } else if (event.key === 'c') {
+        actionOnElement(document, ['show'], elMap['filterbox']);
+        actionOnElement(document, ['click'], elMap['resourcesmenu']);
+        actionOnElement(document, ['focus'], elMap['crewsfilter']);        
+    } else if (event.key === 'm') {
         console.log('Keyboard shortcut: Toggle Match Gantt Dates');
-        actionOnElement(document, false, true, elMap['matchganttdates']);
-    } else if (event.key == 'l') {
+        actionOnElement(document, ['click'], elMap['matchganttdates']);
+    } else if (event.key === 'l') {
         console.log('Keyboard shortcut: Focus on filter lists selection');
-        actionOnElement(document, true, false, elMap['filterselect']);
-    } else if (keysPressed['Shift'] && event.key == 'S') {
+        actionOnElement(document, ['focus'], elMap['filterselect']);
+    } else if (keysPressed['Shift'] && event.key === 'S') {
         console.log('Keyboard shortcut: Focus on Search Service Appointments input');
-        actionOnElement(document, true, false, elMap['searchlistinput']);
-    } else if (keysPressed['Shift'] && event.key == 'R') {
-        actionOnElement(document, true, false, elMap['searchresourceinput']);
+        actionOnElement(document, ['focus'], elMap['searchlistinput']);
+    } else if (keysPressed['Shift'] && event.key === 'R') {
+        actionOnElement(document, ['focus'], elMap['searchresourceinput']);
     }
     delete keysPressed[event.key];
  });
  
  // Take action on an element like focus and/or click
  // to mimic a user action 
- function actionOnElement(parEl, doFocus, doClick, qSelect){
+ function actionOnElement(parEl, actions, qSelect){
     const el = parEl.querySelector(qSelect);
     if (el) {
-        if (doFocus) el.focus();
-        if (doClick) el.click();
+        for (a in actions) {
+            if (actions[a] === 'show') el.style.display = 'block';
+            if (actions[a] === 'hide') el.style.display = 'none';
+            if (actions[a] === 'focus') el.focus();
+            if (actions[a] === 'click') el.click();
+        }
         return el;
     } else {
         console.error(`Element with selector '${qSelect}' not found!`);
