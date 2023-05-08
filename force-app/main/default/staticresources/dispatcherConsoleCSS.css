@@ -1,0 +1,5 @@
+/* Allow multiple lines in a planning bar */
+.ServiceEventPadding {
+    white-space: normal!important;
+    overflow-wrap: anywhere!important;
+}
