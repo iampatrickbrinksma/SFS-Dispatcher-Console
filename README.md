@@ -18,6 +18,7 @@ The following keyboard shortcuts are added:
 * c - opens the Resource filter menu and focuses on the Crews Filtering selection dropdown
 * m - toggle Match Gantt Dates
 * l - puts focus on the list filters for the service appointments list
+* h - toggles the "Show Horizontal Scrollbar" option
 * Shift + S - focus on the search service appointments input field
 * Shift +R - focus on the filter resources input field
 
