@@ -7,6 +7,7 @@
 // c - opens the Resource filter menu and focuses on the Crews Filtering selection dropdown
 // m - toggle Match Gantt Dates
 // l - puts focus on the list filters for the service appointments list
+// h - toggle horizontal scrollbar
 // Shift + S - focus on the search service appointments input field
 // Shift +R - focus on the filter resources input field
 // How to add this to the Dispatcher Console:
@@ -31,6 +32,7 @@ var elMap = {
     'filterselect':         '#PredefinedFilterSelector',
     'searchlistinput':      '#TaskSearchFilterInput',
     'searchresourceinput':  '#SearchEmployeesOnGanttContainer > input',
+    'horizontalscroll':     '#horizontalScrollingCheckbox',
 };
 
 // Add keydown listener to be able to capture 
@@ -77,6 +79,9 @@ document.addEventListener('keydown', (event) => {
     } else if (event.key === 'l') {
         console.log('Keyboard shortcut: Focus on filter lists selection');
         actionOnElement(document, ['focus'], elMap['filterselect']);
+    } else if (event.key === 'h') {
+        console.log('Keyboard shortcut: Toggle horizontal scrollbar');
+        actionOnElement(document, ['click'], elMap['horizontalscroll']);
     } else if (keysPressed['Shift'] && event.key === 'S') {
         console.log('Keyboard shortcut: Focus on Search Service Appointments input');
         actionOnElement(document, ['focus'], elMap['searchlistinput']);
