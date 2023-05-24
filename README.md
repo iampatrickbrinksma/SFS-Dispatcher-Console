@@ -8,6 +8,13 @@ The DispatcherConsoleCSS static resource allows for more text to be displayed on
 
 ![image](https://user-images.githubusercontent.com/78381570/236772466-f0961c9b-65e4-474b-8359-87939d943142.png)
 
+How to add this to the Dispatcher Console:
+1. Save this code snippet in a file named: dispatcherConsoleCSS.css
+2. Create a static resource with the name dispatcherConsoleCSS and upload the dispatcherConsoleCSS.css file
+3. Navigate to Field Service Settings (tab) -> Dispatcher Console UI -> Gantt Configurations, scroll down and enter "dispatcherConsoleCSS" in the External CSS option
+4. Save your changes
+5. Reload the Dispatcher Console
+
 # 2. Additional Keyboard Shortcuts
 
 Standard keyboard shortcuts: https://help.salesforce.com/s/articleView?id=sf.pfs_gantt_keyboard_shortcuts.htm&type=5
