@@ -15,6 +15,8 @@ How to add this to the Dispatcher Console:
 4. Save your changes
 5. Reload the Dispatcher Console
 
+Alternatively, you can clone this repository, and deploy the static resource using VSCode. Or when you are already using an External CSS, you can add the content to the existing one.
+
 # 2. Additional Keyboard Shortcuts
 
 Standard keyboard shortcuts: https://help.salesforce.com/s/articleView?id=sf.pfs_gantt_keyboard_shortcuts.htm&type=5
@@ -35,3 +37,5 @@ How to add this to the Dispatcher Console:
 3. Navigate to Field Service Settings (tab) -> Dispatcher Console UI -> Gantt Configurations, scroll down and enter "dispatcherConsoleJS" in the External JS option
 4. Save your changes
 5. Reload the Dispatcher Console
+
+Alternatively, you can clone this repository, and deploy the static resource using VSCode. Or when you are already using an External JS, you can add the content to the existing one.
