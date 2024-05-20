@@ -2,6 +2,9 @@
 
 This repo contains examples of how to add or adjust functionality to the Salesforce Field Service Dispatcher Console via custom Javascript or CSS.
 
+## Disclaimer
+IMPORTANT: This code is not intended to be deployed directly to a Salesforce production environment, but to be used as an example. This is not a Salesforce product and is not officially supported by Salesforce.
+
 # 1. More Information On Planning Bar
 
 The DispatcherConsoleCSS static resource allows for more text to be displayed on a planning bar in the gantt. The Gantt Label information is displayed on multiple lines instead of just a single line. See screenshot for how this is displayed.
