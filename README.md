@@ -3,7 +3,17 @@
 This repo contains examples of how to add or adjust functionality to the Salesforce Field Service Dispatcher Console via custom Javascript or CSS.
 
 ## Disclaimer
-IMPORTANT: This code is not intended to be deployed directly to a Salesforce production environment, but to be used as an example. This is not a Salesforce product and is not officially supported by Salesforce.
+This repository contains code intended to help Salesforce Field Service customers and partners accelerate their implementations. Please note the following:
+* This code is not an official Salesforce product.
+* It is not officially supported by Salesforce.
+* The code serves as an example of how to implement specific functionality or make use of certain features.
+
+Before using this code in a production environment, it is crucial that you:
+* Adopt the code to fit your specific needs.
+* Test thoroughly to ensure it works as expected in your environment.
+* Consider the code to be your own and take full responsibility for its use.
+
+By using this code, you acknowledge that Salesforce is not liable for any issues that may arise from its use.
 
 # 1. More Information On Planning Bar
 
@@ -12,11 +22,10 @@ The DispatcherConsoleCSS static resource allows for more text to be displayed on
 ![image](https://user-images.githubusercontent.com/78381570/236772466-f0961c9b-65e4-474b-8359-87939d943142.png)
 
 How to add this to the Dispatcher Console:
-1. Save this code snippet in a file named: dispatcherConsoleCSS.css
-2. Create a static resource with the name dispatcherConsoleCSS and upload the dispatcherConsoleCSS.css file
-3. Navigate to Field Service Settings (tab) -> Dispatcher Console UI -> Gantt Configurations, scroll down and enter "dispatcherConsoleCSS" in the External CSS option
-4. Save your changes
-5. Reload the Dispatcher Console
+1. This repository contains the Static Resource dispatcherConsoleCSS, make sure to deploy it
+2. Navigate to Field Service Settings (tab) -> Dispatcher Console UI -> Gantt Configurations, scroll down and enter "dispatcherConsoleCSS" in the External CSS option
+3. Save your changes
+4. Reload the Dispatcher Console
 
 Alternatively, you can clone this repository, and deploy the static resource using VSCode. Or when you are already using an External CSS, you can add the content to the existing one.
 
