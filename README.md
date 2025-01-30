@@ -3,6 +3,9 @@
 This repo contains examples of how to add or adjust functionality to the Salesforce Field Service Dispatcher Console via custom Javascript or CSS.
 
 ## Disclaimer
+
+**Please do not log a support case with Salesforce support. If you encounter an issue or have a question, create a new issue in this repository!**
+
 This repository contains code intended to help Salesforce Field Service customers and partners accelerate their implementations. Please note the following:
 * This code is not an official Salesforce product.
 * It is not officially supported by Salesforce.
